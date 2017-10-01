@@ -9,7 +9,7 @@ Feature: Check for dead links
     And I block access to the URL regex ".*?accounts\.google\.com.*" with response "201"
 	  And I block access to the URL regex ".*?favicon\.ico$" with response "201"
     And I block access to the URL regex ".*?pippio.com.*" with response "201"
-    And I open the page "url"
+    And I open the page "<url>"
     Then I open all links in new tabs and then close the tabs
     And I verify that there were no HTTP errors
     Examples:
