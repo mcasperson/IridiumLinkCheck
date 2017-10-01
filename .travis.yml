@@ -1,0 +1,21 @@
+sudo: required
+dist: trusty
+language: java
+jdk:
+- oraclejdk8
+addons:
+  firefox: "56.0"
+before_install:
+- export CHROME_BIN=/usr/bin/google-chrome
+- sudo apt-get update
+- sudo apt-get install -y libappindicator1 fonts-liberation
+- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+- sudo dpkg -i google-chrome*.deb
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- wget https://s3.amazonaws.com/iridium-release/IridiumApplicationTesting.jar
+script: >
+  java
+  -DtestSource=https://mcasperson.github.io/iridium/features/firsttest.feature
+  -DtestDestination=Chrome
+  -jar IridiumApplicationTesting.jar
