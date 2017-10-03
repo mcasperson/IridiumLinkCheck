@@ -12,7 +12,7 @@ Feature: Check for dead links
     And I block access to the URL regex ".*?static.jboss.org.*\.png" with response "201"
     And I block access to the URL regex ".*?www.jboss.org.*?\.png" with response "201"
     And I block access to the URL regex ".*?jbossremoting.jboss.org.*\.png" with response "201"
-    And I block access to the URL regex "http://jbossremoting.jboss.org/dms/content/common/.*" with response "201"
+    And I block access to the URL regex "http://jbossremoting\.jboss\.org/dms/content/common/.*" with response "201"
     And I block access to the URL regex ".*?customer-context-gateway.atlassian.com.*" with response "201"
     And I block access to the URL regex "https://octopus\.com/img/layout/logo-2x\.png" with response "201"
     And I open the page "<url>"
